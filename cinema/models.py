@@ -40,7 +40,10 @@ class Actor(models.Model):
 
 
 def bus_image_path(instance: "Movie", filename: str) -> pathlib.Path:
-    filename = f"{ slugify(instance.title)}-{uuid.uuid4()}" + pathlib.Path(filename).suffix
+    filename = (
+        f"{ slugify(instance.title)}-{uuid.uuid4()}"
+        + pathlib.Path(filename).suffix
+    )
     return pathlib.Path("upload/movie") / pathlib.Path(filename)
 
 
