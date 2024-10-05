@@ -9,6 +9,7 @@ from user.serializers import AuthTokenSerializer, UserSerializer
 
 class CreateUserView(generics.CreateAPIView):
     serializer_class = UserSerializer
+    permission_classes = []
 
 
 class CreateTokenView(ObtainAuthToken):
